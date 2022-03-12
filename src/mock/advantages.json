@@ -1,0 +1,51 @@
+{
+    "advantages": {
+        "AdvantageTitle": "НАШИ ПРЕИМУЩЕСТВА",
+        "images": [
+            {
+                "AdvantageImage": "/images/advantages/svg/icon1.svg",
+                "AdvantageSubtitle": "Производство и доставка первой партии за один день"
+            },
+            {
+                "AdvantageImage": "/images/advantages/svg/icon2.svg",
+                "AdvantageSubtitle": "Собственное автоматизированное производство"
+            },
+            {
+                "AdvantageImage": "/images/advantages/svg/icon3.svg",
+                "AdvantageSubtitle": "Бесплатная доставка при заказе от 1000 штук"
+            },
+            {
+                "AdvantageImage": "/images/advantages/svg/icon4.svg",
+                "AdvantageSubtitle": "Минимальный заказ от пяти штук"
+            },
+            {
+                "AdvantageImage": "/images/advantages/svg/icon5.svg",
+                "AdvantageSubtitle": "Надежный натуральный материал"
+            },
+            {
+                "AdvantageImage": "/images/advantages/svg/icon6.svg",
+                "AdvantageSubtitle": "Выбор из более чем 30 расцветок"
+            }
+        ]
+    },
+    "galery": {
+        "GaleryTitle": "Галерея расцветок",
+        "images": [
+            { "GaleryImage": "/images/advantages/image1.jpg" },
+            { "GaleryImage": "/images/advantages/image2.jpg" },
+            { "GaleryImage": "/images/advantages/image3.jpg" },
+            { "GaleryImage": "/images/advantages/image4.jpg" },
+            { "GaleryImage": "/images/advantages/image5.jpg" },
+            { "GaleryImage": "/images/advantages/image1.jpg" },
+            { "GaleryImage": "/images/advantages/image2.jpg" },
+            { "GaleryImage": "/images/advantages/image3.jpg" },
+            { "GaleryImage": "/images/advantages/image4.jpg" },
+            { "GaleryImage": "/images/advantages/image5.jpg" },
+            { "GaleryImage": "/images/advantages/image1.jpg" },
+            { "GaleryImage": "/images/advantages/image2.jpg" },
+            { "GaleryImage": "/images/advantages/image3.jpg" },
+            { "GaleryImage": "/images/advantages/image4.jpg" },
+            { "GaleryImage": "/images/advantages/image5.jpg" }
+        ]
+    }
+}

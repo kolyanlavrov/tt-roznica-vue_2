@@ -1,0 +1,22 @@
+{
+    "products": {
+        "ModelTitle": "Модели масок",
+        "models": [
+            {
+                "ModelImage": "/images/model/image1.jpg",
+                "title": "Анатомическая",
+                "subtitle": "С вытачкой на носу и подбородке"
+            },
+            {
+                "ModelImage": "/images/model/image2.jpg",
+                "title": "Каркасная",
+                "subtitle": "С прочным швом от переносицы до подбородка"
+            },
+            {
+                "ModelImage": "/images/model/image3.jpg",
+                "title": "Классическая",
+                "subtitle": "В форме традиционных "
+            }
+        ]
+    }
+}

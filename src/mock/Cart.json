@@ -1,0 +1,31 @@
+{
+    "Cart": {
+        "CartTitle": "Корзина",
+        "models": [
+            {   
+                "id": 1,
+                "CartImage": "/images/korzina/image1.jpg",
+                "CartTitle": "Маска анатомическая",
+                "CartSubtitle": "фиолетовая с узором"
+            },
+            {   
+                "id": 2,
+                "CartImage": "/images/korzina/image2.jpg",
+                "CartTitle": "Маска каркасная",
+                "CartSubtitle": "красная с узором"
+            },
+            {
+                "id": 3,
+                "CartImage": "/images/korzina/image3.jpg",
+                "CartTitle": "Маска классическая",
+                "CartSubtitle": "белая с узором"
+            },
+            {
+                "id": 4,
+                "CartImage": "/images/korzina/image1.jpg",
+                "CartTitle": "Маска классическая",
+                "CartSubtitle": "черная с узором"
+            }
+        ]
+    }
+}
