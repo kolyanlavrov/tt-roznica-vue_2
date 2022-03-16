@@ -27,7 +27,7 @@ html,body{
 }
 input,textarea{font-family:inherit;}
 
-input::-ms-clear{display: none;}
+/* input::-ms-clear{display: none;} */
 button{cursor: pointer;}
 button::-moz-focus-inner {padding:0;border:0;}
 a, a:visited{text-decoration: none;}
@@ -37,12 +37,12 @@ ul{margin-top:0;margin-bottom:0rem!important;}
 img{vertical-align: top;}
 
 h1,h2,h3,h4,h5,h6{font-size:inherit;font-weight: 400;}
-input[type='number'] {
+/* input[type='number'] {
     -moz-appearance:textfield;
 }
 
 input::-webkit-outer-spin-button,
 input::-webkit-inner-spin-button {
     -webkit-appearance: none;
-}
+} */
 /*--------------------*/

@@ -110,6 +110,8 @@
                 <Tabs />
             </div>
         </div>
+        <ButtonCart class="d-b-480 button__cart-mobile"/>
+        <demo-adaptive-modal />
     </div>
 </template>
 <script>
@@ -119,6 +121,8 @@ import ButtonBasket from "../components/ButtonBasket.vue";
 import ButtonFastOrder from "../components/ButtonFastOrder.vue";
 import Tabs from "../components/Tabs.vue";
 import { Swiper, SwiperSlide, directive } from "vue-awesome-swiper";
+import ButtonCart from '../components/ButtonCart.vue'
+import DemoAdaptiveModal from '../components/Modal_Adaptive.vue'
 // import 'swiper/swiper-bundle.css'
 import "swiper/css/swiper.css";
 import data from "../mock/cards";
@@ -132,6 +136,8 @@ export default {
         Tabs,
         Swiper,
         SwiperSlide,
+        ButtonCart,
+        DemoAdaptiveModal,
     },
     directives: {
         swiper: directive,

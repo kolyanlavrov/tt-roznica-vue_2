@@ -11,7 +11,9 @@
         <Materials/>
         <Map/>
         <Footer/>
-        <ButtonCart/>
+        <ButtonCart class="d-b-480 button__cart-mobile"/>
+        <demo-adaptive-modal />
+        
     </div>
 </template>
 
@@ -28,6 +30,9 @@ import Materials from '../pages/Materials.vue';
 import Map from '../pages/Map.vue';
 import Footer from '../pages/Footer.vue'
 import ButtonCart from '../components/ButtonCart.vue'
+import DemoAdaptiveModal from '../components/Modal_Adaptive.vue'
+
+
 export default {
     name: "MaskLandingPage",
 	components: {
@@ -43,6 +48,8 @@ export default {
         Map,
         Footer,
         ButtonCart,
+        DemoAdaptiveModal,
+        
 	},
 }
 </script>

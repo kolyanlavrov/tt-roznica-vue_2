@@ -29,7 +29,7 @@
                         <!-- <div class="menu__korzina">
                             <a href="#"><img src="../../public/images/icon-svg/korzina.svg" alt="" /></a>
                         </div> -->
-                        <!-- <ButtonCart/> -->
+                        <ButtonCart/>
                     </div>
                 </div>
             </div>
@@ -83,16 +83,13 @@
                     </ul>
                 </div>
             </div>
-            <demo-adaptive-modal />
-            <!-- <ButtonCart/> -->
         </header>
-        <demo-adaptive-modal />
     </div>
 </template>
 
 <script>
-import DemoAdaptiveModal from '../components/Modal_Adaptive.vue'
-// import ButtonCart from "../components/ButtonCart.vue"
+// import DemoAdaptiveModal from '../components/Modal_Adaptive.vue'
+import ButtonCart from "../components/ButtonCart.vue"
 export default {
     name: "mainheader",
     data() {
@@ -101,16 +98,13 @@ export default {
         };
     },
     components: {
-        DemoAdaptiveModal,
-        // ButtonCart
+        // DemoAdaptiveModal,
+        ButtonCart
     }
 };
 </script>
 
 <style scoped>
-.menu {
-    padding-right: 87px;
-}
 .menu__title a {
     font-size: 40px;
     line-height: 59px;

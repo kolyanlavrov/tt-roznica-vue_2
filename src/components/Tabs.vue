@@ -156,9 +156,7 @@
 					</button>
 				</b-tab>
 				<b-tab class="cards-tabs__title" title="Доставка">
-					<b-card-text class="cards-tabs__text cards-tabs__delivery">
-						Доставка
-					</b-card-text>
+					<!-- <Vuelidate/> -->
 				</b-tab>
 			</b-tabs>
 		</b-card>
@@ -337,11 +335,12 @@
 	</div>
 </template>
 <script>
+// import Vuelidate from '../Vuelidate.vue'
 import data from '../mock/cards'
 export default {
 	name: 'Tabs',
 	components: {
-		
+		// Vuelidate,
 	},
 	data () {
 		return {

@@ -13,12 +13,15 @@ Vue.use(VueRouter)
 import VModal from 'vue-js-modal'
 import 'vue-js-modal/dist/styles.css'
 Vue.use(VModal)
+
 // Підключаємо CSS Стилі
 import './assets/styles/styles.scss'
 import './assets/styles/style_obnul.css'
 import './assets/styles/style.css'
 import './assets/styles/iconfont.css'
-
+// Підключаємо Vuelidate Валідатор
+import Vuelidate from 'vuelidate'
+Vue.use(Vuelidate)
 
 new Vue({
 	render: h => h(App),

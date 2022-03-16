@@ -40,13 +40,46 @@
             <div class="popup__order order">
                 <h2 class="order__title">Оформление заказа</h2>
                 <div class="order__wrapper">
-                    <form name="Order" action="#" method="POST" class="order__form form">
+                    <form @submit.prevent="submit" name="Order" action="#" method="POST" class="order__form form">
                         <fieldset class="order__personal-data">
                             <p>Личные данные</p>
-                            <input type="text" placeholder="Введите имя*" class="order__input">
-                            <input type="text" placeholder="Введите фамилию" class="order__input">
-                            <input type="email" placeholder="Введите e-mail*" class="order__input">
-                            <input type="tel" placeholder="Введите номер телефона" class="order__input">
+                            <div class="form-group__name personal-data__group">
+                                <div class="form-group"
+                                    :class="{ 'form-group--error': $v.name.$error }"
+                                >
+                                    <input type="text" v-model.trim="$v.name.$model" placeholder="Введите имя*" class="order__input" />
+                                </div>
+                                <div class="error" v-if="!$v.name.required">Укажите имя</div>
+                                <div class="error" v-if="!$v.name.minLength">
+                                    Имя должно иметь не менее {{ $v.name.$params.minLength.min }} букв.
+                                </div>
+                            </div>
+                            <div class="form-group__surename personal-data__group">
+                                <div class="form-group"
+                                    :class="{ 'form-group--error': $v.surename.$error }"
+                                >
+                                    <input type="text" v-model.trim="$v.surename.$model" placeholder="Введите фамилию" class="order__input">
+                                </div>
+                                <div class="error" v-if="!$v.surename.required">Укажите фамилию</div>
+                            </div>
+                            <div class="form-group__email personal-data__group">
+                                <div class="form-group"
+                                    :class="{ 'form-group--error': $v.email.$error }"
+                                >
+                                    <input type="email" placeholder="Введите e-mail*" class="order__input"
+                                    v-model.trim="$v.email.$model" />
+                                </div>
+                                <div class="error" v-if="!$v.email.required">Укажите имеил</div>
+                            </div>
+                            <div class="form-group__tel personal-data__group">
+                                <div class="form-group "
+                                    :class="{ 'form-group--error': $v.tel.$error }"
+                                >
+                                    <input type="tel" placeholder="Введите номер телефона" class="order__input"
+                                    v-model.trim="$v.tel.$model" />
+                                </div>
+                                <div class="error" v-if="!$v.email.required">Укажите телефон</div>
+                            </div>
                             <input type="text" placeholder="Введите адрес*" class="order__input order__input_adress">
                         </fieldset>
                         <fieldset class="order__delivery delivery">
@@ -84,6 +117,8 @@
 
 <script>
 import data from '../mock/Cart'
+import { required, minLength, email, numeric } from "vuelidate/lib/validators";
+// sameAs, between
 export default {
     name: "Modal_Adaptive",
     data () {
@@ -92,6 +127,10 @@ export default {
             count: 1,
             maxCount: 100000,
             minCount: 1,
+            name: '',
+            surename:'',
+            email:'',
+            tel: '380',
         }
     },
     methods: {
@@ -105,6 +144,21 @@ export default {
                 this.count--;
             }
         },
+    },
+    validations: {
+        name: {
+            required,
+            minLength: minLength(2),
+        },
+        surename: {
+            required
+        },
+        email: {email, required},
+        tel: {
+            required,
+            numeric,
+            minLength: minLength(12),
+        }
     },
 };
 </script>
@@ -225,11 +279,47 @@ a.popup__close {
 .order__title {
     margin-bottom: 15px;
 }
+.personal-data__group {
+    display: inline-block;
+    height: 42px;
+    margin-bottom: 10px;
+}
+.form-group {
+    
+}
+.order__input {
+    
+}
+.form-group .order__input {
+    
+}
+.error {
+    display: none;
+    margin-top: -1.6875rem;
+}
+.form-group--error input {
+    border-color: rgb(247, 148, 131);
+}
+.form-group--error+.error,  
+.form-group+.error {
+    color: rgb(245, 127, 108);
+    font-size: 11px;
+    font-weight: 400;
+}
+.form-group--error+.error {
+    display: block;
+}
+.form-group--error {
+    margin-bottom: 2rem;
+}
+.order__input {
+    margin-bottom: 0px;
+}
 
 fieldset {
     font-weight: 500;
     font-size: 18px;
-    line-height: 21px;
+    /* line-height: 21px; */
     color: #000000;
 }
 .order__personal-data {
@@ -240,7 +330,7 @@ fieldset {
 .order__comment p {
     margin-bottom: 11px;
 }
-.order__personal-data input:nth-child(odd) {
+.order__personal-data .personal-data__group:nth-child(odd) {
     margin-left: 20px;
 }
 .order__personal-data input,
@@ -264,7 +354,6 @@ fieldset {
 .order__input {
 	width: 227px;
     height: 42px;
-	margin-bottom: 10px;
 }
 .order__input_adress {
 	width: 100%;
@@ -374,7 +463,7 @@ p.italic {
 @media (max-width: 768px) {
 	.popup__content {
 		flex-direction: column;
-        /* padding: 15px 20px 0px; */
+        /* padding: 0px; */
 	}
 	.popup__cart,
     .popup__order {
@@ -396,7 +485,72 @@ p.italic {
 		margin-top: 21px;
 	}
 }
-@media (max-width: 425px) {
-
+@media (max-width: 480px) {
+    .popup__content {
+        padding: 0px 21px;
+	}
+    .popup__cart,
+    .popup__order,
+    .order__input {
+        width: 333px;
+	}
+    .popup__order {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    .order__personal-data input:nth-child(odd) {
+        margin-left: 0px;
+    }
+    .delivery__wrap {
+        flex-direction: column;
+        text-align: left;
+    }
+    .delivery__radio {
+        margin-bottom: 22px;
+    }
+    .delivery__radio:last-child {
+        margin-bottom: 0px;
+    }
+    .delivery__input-radio {
+        padding-left: 40px;
+    }
+    .order__comment {
+        margin-bottom: 57px;
+    }
+    .order__textarea {
+        height: 124px;
+    }
+    .order__submit {
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    button.order__button-submit.button {
+        width: 189px;
+        padding: 0px;
+        margin: 27px auto 0px;
+    }
+    .order__submit p {
+        border-bottom: none;
+        padding: 0px;
+        align-self:center;
+    }
+    p.italic {
+        margin-top: 50px;
+    }
+}
+@media (max-width: 320px) {
+    .popup__content {
+        padding: 0px 10px;
+	}
+    .popup__cart,
+    .popup__order,
+    .order__input {
+        width: 300px;
+	}
+    .body-cart__content {
+        padding: 41px 5px 0px 5px;
+    }
 }
 </style>

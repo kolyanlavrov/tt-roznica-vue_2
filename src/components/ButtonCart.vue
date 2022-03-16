@@ -1,5 +1,5 @@
 <template>
-    <button class="button__cart button__cart-mobile" @click="$modal.show('example-adaptive')">
+    <button class="button__cart" @click="$modal.show('example-adaptive')">
         <picture>
             <source media="(max-width: 480px)" srcset="../../public/images/icon-svg/button-cart-mobile.svg">
             <img src="../../public/images/icon-svg/korzina.svg" alt="">
@@ -143,16 +143,32 @@ export default {
 </script>
 
 <style scoped>
-button.button__cart {
+.button__cart {
     background-color: #fff;
-    
-}
-.button__cart-mobile {
-    /* display: none; */
+    margin-left: 21px;
 }
 @media (max-width: 768px) {
     .button__cart {
-        margin: 0px;
+        margin-left: 0px;
     }
 }
+@media (max-width: 480px) {
+    .button__cart-mobile {
+        width: 54px;
+        height: 54px;
+        background-color: #fff;
+        border-radius: 50%;
+
+        position: fixed;
+        z-index: 999;
+        bottom: 20px;
+        right: 20px;
+    }
+    .button__cart-mobile img {
+        position: absolute;
+        top: 16px;
+        left: 10px;
+    }
+}
+
 </style>
